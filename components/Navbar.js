@@ -7,14 +7,23 @@ export default function Navbar() {
     <nav>
       <Link href="/">
         {/* Link는 href만 나머지는 a태그에 */}
-        <a style={{ color: router.pathname === "/" ? "red" : "blue" }}>Home</a>
+        <a className={router.pathname === "/" ? "active" : ""}>Home</a>
       </Link>
       &nbsp;
       <Link href="/about">
-        <a style={{ color: router.pathname === "/about" ? "red" : "blue" }}>
-          About
-        </a>
+        <a className={router.pathname === "/about" ? "active" : ""}>About</a>
       </Link>
+      <style jsx>{`
+        nav {
+          background-color: tomato;
+        }
+        a {
+          text-decoration: none;
+        }
+        .active {
+          color: yellow;
+        }
+      `}</style>
     </nav>
   );
 }
