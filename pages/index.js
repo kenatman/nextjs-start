@@ -38,7 +38,7 @@ export default function Home({ results }) {
     </div>
   );
 }
-
+// 백엔드에서만 호출되는 함수
 export async function getServerSideProps() {
   const { results } = await (
     await fetch("http://localhost:3000/api/movies")
